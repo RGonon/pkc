@@ -22,6 +22,7 @@ def mod_exp(a,e,n):
 print("Modular exp of 3^12345 mod 97: ",mod_exp(3, 12345, 97))
 print("Modular exp of 3^123456789012345 mod 976: ",mod_exp(3, 123456789012345, 976))
 print()
+
 def extended_gcd(a,b):
     x0,y0= (1,0) 
     x1,y1 = (0,1)
@@ -44,6 +45,7 @@ def crt(p,q,a,b):
 print("CRT with x ≅ 1 mod 10 and x ≅ 2 mod 21: ",crt(10, 21, 1, 2))
 print("CRT with x ≅ 11 mod 257 and x ≅ 13 mod 293: ",crt(257, 293, 11, 13))
 print()
+
 def crt_list(primes,values):
     res = 0
     N = 1
