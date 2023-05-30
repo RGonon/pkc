@@ -93,15 +93,15 @@ def rsa_pks_genkey(key_length):
         return rsa_genkey(key_length)
     d = extended_gcd(phi,e)[2]
     d = d%phi if d<0 else d
-    m = hashlib.sha1() 
-    return (p,q,d),(n,e,m)
+    H = hashlib.sha1() 
+    return (p,q,d),(n,e,H)
 
 
 def rsa_pks_sign(m,sk,pk):
     hash_fun = pk[2].copy()
     hash_fun.update((str(m)).encode())
     h = hash_fun.digest()
-    h= int.from_bytes(h,"big")%pk[0]
+    h= int.from_bytes(h,"big")
     return mod_exp(h,sk[2],pk[0])
 
 def rsa_pks_verify(sig,m,pk):
@@ -109,7 +109,7 @@ def rsa_pks_verify(sig,m,pk):
     hash_fun = pk[2].copy()
     hash_fun.update((str(m)).encode())
     h = hash_fun.digest()
-    h = int.from_bytes(h,"big")%pk[0]
+    h = int.from_bytes(h,"big")
     return 1 if s ==h else 0
 
 
