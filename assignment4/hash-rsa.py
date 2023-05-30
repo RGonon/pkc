@@ -113,21 +113,29 @@ def rsa_pks_verify(sig,m,pk):
     return 1 if s ==h else 0
 
 
+print("Key length = 256 bits")
+print("Message = 1234")
 key_length = 256
 sk,pk = rsa_pks_genkey(key_length)
 m = 1234
 sig = rsa_pks_sign(m,sk,pk)
-print(rsa_pks_verify(sig,m,pk))
+print("Result of the signature's verification :",rsa_pks_verify(sig,m,pk))
+print()
 
 
+print("Key length = 512 bits")
+print("Message = 1234")
 key_length = 512
 sk,pk = rsa_pks_genkey(key_length)
 m = 1234
 sig = rsa_pks_sign(m,sk,pk)
-print(rsa_pks_verify(sig,m,pk))
+print("Result of the signature's verification :",rsa_pks_verify(sig,m,pk))
+print()
 
+print("Key length = 1024 bits")
+print("Message = 1234")
 key_length = 1024
 sk,pk = rsa_pks_genkey(key_length)
 m = 1234
 sig = rsa_pks_sign(m,sk,pk)
-print(rsa_pks_verify(sig,m,pk))
+print("Result of the signature's verification :",rsa_pks_verify(sig,m,pk))
