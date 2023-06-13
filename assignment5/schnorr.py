@@ -79,7 +79,7 @@ def generate_prime_subgroup(plen, qlen = 160):
         q = random.randint(2**(qlen-1),2**qlen-1)
         if q %2==0:
             q = q+1 if q<2**qlen-1 else q-1
-        a1 = miller_rabin(q) and ((math.log2(q)//1) >= qlen-1)
+        a1 = miller_rabin(q) 
     while not b:
         k = random.randint(2**(plen-qlen-1),(2**(plen-qlen)-1))
         p = k*q+1
