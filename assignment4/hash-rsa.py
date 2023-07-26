@@ -1,3 +1,5 @@
+#author: raphael.gonon
+
 import hashlib 
 import random
 

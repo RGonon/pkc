@@ -1,3 +1,5 @@
+#author: raphael.gonon
+
 def to_bin(n):
     s=""
     while n!=0:

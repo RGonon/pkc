@@ -1,3 +1,5 @@
+#author: raphael.gonon
+
 import random
 
 def gcd(a,b):

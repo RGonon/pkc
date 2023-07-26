@@ -1,3 +1,5 @@
+#author: raphael.gonon
+
 from math import * 
 
 def gcd(a,b):
